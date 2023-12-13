@@ -1,0 +1,193 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    position: relative;
+}
+
+.corner-text {
+    position: absolute;
+    top: 10px;
+    font-size: 12px;
+    color: #555;
+}
+
+.left-corner {
+    left: 20px;
+}
+
+.right-corner {
+    right: 20px;
+    padding-right: 20px; /* Added padding */
+}
+
+
+#app {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+/* A button with a gradient background, a 3D effect, and a ripple effect on click */
+
+button {
+    /* Set the font family, size, and weight */
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+  
+    /* Set the background color to a linear gradient from green to blue */
+    background: linear-gradient(to right, #4CAF50, #2196F3);
+  
+    /* Set the text color to white */
+    color: white;
+  
+    /* Set the padding, border, and border radius */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+  
+    /* Set the cursor to pointer */
+    cursor: pointer;
+  
+    /* Add a box shadow for a 3D effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+    /* Add a transition effect for the box shadow */
+    transition: box-shadow 0.3s ease;
+  }
+  
+  /* Change the box shadow on hover */
+  button:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Add a ripple effect on click */
+  button:active {
+    /* Create a pseudo-element to cover the button */
+    position: relative;
+    overflow: hidden;
+  
+    /* Use the :after selector to create a circle */
+    ::after {
+      /* Set the content to an empty string */
+      content: "";
+  
+      /* Set the position to absolute and the size to 100% */
+      position: absolute;
+      width: 100%;
+      height: 100%;
+  
+      /* Set the top and left to 0 */
+      top: 0;
+      left: 0;
+  
+      /* Set the background color to white with some opacity */
+      background: rgba(255, 255, 255, 0.3);
+  
+      /* Set the border radius to 50% to make a circle */
+      border-radius: 50%;
+  
+      /* Use the transform property to move the circle to the center of the button */
+      transform: translate(-50%, -50%);
+  
+      /* Use the pointer-events property to prevent the pseudo-element from interfering with the click event */
+      pointer-events: none;
+    }
+  
+    /* Use the animation property to create a ripple effect */
+    animation: ripple 0.6s linear;
+  }
+  
+  /* Define the keyframes for the ripple animation */
+  @keyframes ripple {
+    /* Start with a small circle with 0 opacity */
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+  
+    /* Expand the circle to cover the button with some opacity */
+    50% {
+      width: 200%;
+      height: 200%;
+      opacity: 0.5;
+    }
+  
+    /* End with a large circle with 0 opacity */
+    100% {
+      width: 400%;
+      height: 400%;
+      opacity: 0;
+    }
+  }
+  
+  
+
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+/* Existing styles remain unchanged */
+
+
+
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+
+li span {
+    font-size: 16px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.task-date {
+    display: block;
+    margin-top: 5px;
+  }
+  
+  .close-icon {
+    display: block;
+    margin-top: 5px;
+  }
+  
