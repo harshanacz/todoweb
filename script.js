@@ -54,21 +54,30 @@ function saveTasks() {
         tasks.push({ text: taskText });
     });
 
-    // Save tasks to local storage
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    // Save tasks to local storage if available
+    try {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    } catch (e) {
+        console.error("Error saving tasks to local storage:", e);
+    }
 }
 
 function loadTasks() {
     const taskList = document.getElementById("taskList");
-    const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-    // Populate the task list with stored tasks
-    storedTasks.forEach(function (task) {
-        const li = document.createElement("li");
-        li.innerHTML = `
-            <div class="task-title">${task.text}</div>
-            <div class="close-icon" onclick="removeTask(this)">×</div>
-        `;
-        taskList.appendChild(li);
-    });
+    try {
+        const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+        // Populate the task list with stored tasks
+        storedTasks.forEach(function (task) {
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <div class="task-title">${task.text}</div>
+                <div class="close-icon" onclick="removeTask(this)">×</div>
+            `;
+            taskList.appendChild(li);
+        });
+    } catch (e) {
+        console.error("Error loading tasks from local storage:", e);
+    }
 }
